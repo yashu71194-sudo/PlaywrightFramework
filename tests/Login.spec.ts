@@ -28,4 +28,10 @@ test('Invalid login test', async ({page})=>{
 // await page.locator("//input[@id='login-button']").click();
 
 })
+test('git commit login test2', async ({page})=>{
+
+    await page.goto('/')
+    const loginpage = new loginPage(page);
+    loginpage.login('error_user','secret_sauce')
+    await expect(page.locator("//div[text()='Swag Labs']")).toHaveText("Swag Labs");})
 
